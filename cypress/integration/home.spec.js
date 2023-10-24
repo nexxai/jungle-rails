@@ -3,7 +3,7 @@ describe("home page", () => {
     cy.visit("http://127.0.0.1:3000");
   });
 
-  it("the home page displays the name of the site", () => {
+  it("displays the name of the site", () => {
     cy.get("h1").contains("The Jungle");
   });
 
