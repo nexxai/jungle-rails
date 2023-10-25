@@ -8,7 +8,7 @@
   <% end%>
   <div class="d-flex justify-content-between">
     <div> 
-      <% if product.quantity == 0 %>
+      <% if product.sold_out? %>
       <div class="btn btn-danger">
         Sold Out
       </div>
@@ -16,7 +16,7 @@
     </div>
     <div>
       <%= button_to add_item_cart_path(product_id: product.id), class: 'btn' ,
-      method: :post, disabled: product.quantity == 0 do %>
+      method: :post, disabled: product.sold_out? do %>
         <%= fa_icon "shopping-cart", text: 'Add' %> 
       <% end %>
     </div>
